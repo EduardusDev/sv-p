@@ -1,0 +1,168 @@
+*{
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none; 
+}
+html, body { margin:0;height: 100%; background: none;font-family: "Ubuntu",sans-serif;}
+#charselection{ position: relative; min-height: 100%;}
+#charselection .block{
+    position: absolute;
+    right: 25px;
+    top: 200px;
+    width: 250px;
+}
+#charselection .block .dp{
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    padding: 10px;
+    background: #2d2d2d;
+}
+#charselection .block .dp p{ margin: 0; }
+
+#charselection .block #characters .char{
+    border-left: 4px solid rgba(102, 73, 246, 0.5);
+    height: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 16px;
+    color: white;
+    padding: 20px;
+    background: #161328;
+}
+#charselection .block #characters .char:hover{border-color:#ffdb00;}
+#charselection .block #characters .char p{ margin: 0;}
+#charselection .block #characters .char .name{ margin-left:5px;float: left; }
+#charselection .block #characters .char .lvl{ float: right; }
+
+#charselection .block .button-create{
+    border-left: 4px solid rgba(102, 73, 246, 0.5);
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 16px;
+    color: white;
+    padding: 20px;
+    background: #161328;
+    text-align: center;
+}
+#charselection .block .button-create:hover{border-color:#ffdb00;}
+
+
+
+#charselection .stats{ left: 25px; right: 0; width: 310px;}
+#charselection .stats .top{
+    height: 60px;
+    text-align: center;
+    color: white;
+    background: #252041;
+    font-weight: bold;
+    font-size: 25px;
+}
+#charselection .stats .top .name{
+    font-size: 22px;padding-top: 15px;
+}
+#charselection .stats .top p{margin: 0;}
+#charselection .stats .top .fa-portrait{margin: 10px;font-size: 40px;float: left;}
+
+#charselection .stats .content{
+    padding: 7px;
+    color: white;
+    background: #161328;
+
+}
+#charselection .stats .content p{margin: 0;}
+#charselection .stats .content .name{
+    border-bottom: 2px solid #5a5a5a;
+    padding: 7px;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    
+}
+#charselection .stats .content .cash{
+    margin-top: 10px;
+    font-weight: bold;
+    height: 50px;
+    font-size: 20px;
+}
+#charselection .stats .content .cash .money{ float: left; }
+#charselection .stats .content .cash .bank{ float: right; }
+
+#charselection .stats .content .info{ margin-top: 20px;height: 70px;font-size: 20px; }
+#charselection .stats .content .info .inf{color: #ffe000;font-size: 15px;}
+#charselection .stats .content .info .left{float: left;}
+#charselection .stats .content .info .right{float: right;text-align: right;}
+#charselection .stats .button{
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    background: #252041;
+}
+#charselection .stats .button:hover{background: #e25b5b;}
+
+
+
+
+#charselection .create{
+    padding: 10px;
+    height: 310px;
+    max-width: 450px;
+    margin: 0 auto;
+    position: relative;
+    top: 200px;
+    background: #2d2d2d;
+    color: #fff;
+    border-radius: 5px;
+}
+#charselection .create .top{height: 50px;}
+#charselection .create .top p{
+    font-weight: bold;
+    margin: 0;
+    float: left;
+    font-size: 30px;
+}
+#charselection .create .top .button{float: right; font-size: 30px;}
+#charselection .create .top .button:hover{float: right; font-size: 30px; color: e25b5b;}
+#charselection .create .content{padding: 20px;}
+#charselection .create .content input{
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 0;
+    background: #3c3c3c;
+    font-size: 25px;
+    width: 100%;
+}
+#charselection .create .content .button{
+    border-radius: 20px;
+    background: #05d228;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    padding: 5px;
+}
+#charselection .create .content .button:hover{background:#06b924;}
+.enter{
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+}
+.enter .text{
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background: #161328;
+    padding: 10px;
+    max-width: 350px;
+    margin: 0 auto;
+    position: relative;
+}
+.enter .text:hover{
+    background: #252041;
+}

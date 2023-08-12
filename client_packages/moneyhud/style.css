@@ -1,0 +1,38 @@
+
+@font-face {
+  font-family: gtafont;
+  src: url(pricedow.ttf);
+}
+
+.dinero
+{
+   font-family: gtafont;
+   font-size: 45px;
+   color: green;
+   -webkit-text-stroke-width: 2px;
+   -webkit-text-stroke-color: #000000;
+   opacity: 0.6;
+}
+
+
+.banco
+{
+  font-family: gtafont;
+  font-size: 30px;
+  color: #74F97D;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #000000;
+  opacity: 0.6;
+
+}
+
+.box-stats
+{
+ text-align: right;
+ width: 200px;
+ height: 100px;
+ margin-left: auto;
+
+
+}
+

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>LARP AUTH</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="./assets/css/auth_new.css" />
+    <link rel="stylesheet" href="../css/fonts.css" />
+    <script src="assets/js/jquery-3.2.1.js"></script>
+</head>
+
+<body>
+  
+    <div id="auth" v-if="show">
+            <div class="modal animated fadeIn"  v-if="pages[activePage] == 'auth'">
+                <div class="leftSide">
+                    <ul class="header__buttons">
+                        <li v-for="(tab, index) in tabs" :key="index" :class="tabsActive == index ? 'active':''" @click="clickTab(index)">{{tab.name}}</li>
+                    </ul>
+                    <img src="./assets/images/logo.png" class="logo" alt="logo">
+                    <div v-if="tabsActive == 0" class="animated fadeIn">
+
+                    <div class="animated fadeIn" id="login">
+                        <div class="text">
+                            <p>Bienvenido a <span>Los Angeles RolePlay</span></p>
+                            <p>¿ No estas registrado ? <a href="#" class="link" @click="clickTab(1)">Registrate</a></p>
+                        </div>
+                        <ul class="inputGroup">
+                            <li><input id="loginName" class="form-control" type="text" class="shadow-in text-white"  name="loginName"  placeholder="Usuario"><span class="icon auth s1"></span></li>
+                            <li><input id="loginPass" class="form-control" type="password" name="loginPass"   placeholder="Contraseña" ><span class="icon password s1"></span></li>
+                        </ul>                    
+						 
+                        <div class="button">							
+                            <button type="button" class="btn purple" id="loginBtn" onclick="sendAccountInfo(0);">Entrar</button>
+
+                        </div>						
+                        </div> 
+
+                    </div>  
+
+                    <div v-else-if="tabsActive == 1" id="register" >
+                        <div class="animated fadeIn">
+                            <div class="formGroup">  
+                                <input class="form" type="text" class="new-user__login" id="registerName" placeholder="Usuario" required>
+                                <input class="form" type="password" class="new-user__login" id="registerPass" placeholder="Contraseña" required>
+                                <input class="form" type="password" name="new-user__pw-repeat" id="registerPass2" placeholder="Repetir Contraseña" required>
+                            </div>
+        
+                            <div type="button" class="button" @click="sendAccountInfo(1);">
+                                <button type="button"  class="btn purple" id="registerBtn" @click="sendAccountInfo(1);">Registrarse</button>
+
+                            </div>
+                        </div>
+                    </div>
+                  
+                </div>
+                
+                <div class="rightSide">
+                    <div class="slider">
+                        <img :src="'./assets/images/' + slider[sliderActive].img" alt="slide" :class="'slide ' + slider[sliderActive].animate">
+
+                        <div class="progress"><div  class="line" :style="{'width': `${progress}%`}"></div></div>
+                    </div>
+
+                    <div :class="'content__slider ' + slider[sliderActive].animate">
+                        <div class="header" v-html="slider[sliderActive].header"></div>
+                        <div class="text">
+                            {{slider[sliderActive].text}}
+                        </div>
+                        <div class="date">
+                            {{slider[sliderActive].date}}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+      
+        </div>
+
+    <script src="./assets/js/vue.js"></script>    
+    <script>
+
+
+        var slots = new Vue({
+        el: "#auth",
+        data: { 
+
+            modal: false,
+            show: true,
+            loginName: "loginName",
+            zoomEl: undefined,
+            activePage: 0,
+            pages: ['auth', 'slots', 'spawn'],
+            tabs: [
+                {name: 'Login'},
+                {name: 'Registro'},
+            ],
+            error: { text: ''},
+            authData: [
+                {
+                    loginName: '',
+                    loginPass: '',
+					remember: ''
+                },
+                {
+                    loginName: '',
+                    email: '',
+                    promo: '',
+                    password: '',   
+                    repeatPassword: '',
+					remember: ''
+                },
+            ],
+            slider: [
+                {
+                    img: 'slide1.jpg',
+                    animate: '',
+                    date: '04.05.23',
+                    header: 'Bandas <span>#1</span>',
+                    text: 'Crea tu propia banda y hazte con el poder de la ciudad o puede que una.... ¿ Mafia ? por qué no entras y lo descubres!'
+                },
+
+            ],
+            sliderActive: 0,
+            progress: 0,
+            tabsActive: 0,
+            setIntervalRef: 0,
+            tempo: 45,
+        },
+        created() {
+             this.timer(this.tempo)
+        },
+        mounted() {
+            window.addEventListener('resize', this.Resize)
+            this.zoomEl = document.createElement('style');
+            document.querySelector('head').appendChild(this.zoomEl);
+            this.Resize();
+        },
+        watch: {
+        },
+        methods: { 
+
+            zoom() {
+                let zoom = Math.min(3, +(Math.sqrt(window.outerWidth ** 2 + window.outerHeight ** 2) / 2202.9071700822983).toFixed(3));
+                return zoom
+            },
+ 
+            active(index, pages) {
+                this.list[index].input.login = '';
+                this.list[index].input.sername = '';
+                this.list[index].input.password = '';
+                this.list[index].input.remember = '';
+                this.list[index].page = pages;
+            },
+
+            clickTab(index) {
+                this.tabsActive = index;
+            },
+            Resize: (async function(){
+                let zoom = await this.zoom();
+                window['zoom'] = zoom;
+                this.zoomEl.innerHTML = `
+                * { --zoom: ${zoom}; }
+                .zoom-container{transform: scale(var(--zoom));}
+                .zoom-container-center{transform: scale(var(--zoom)) translate(-50%, -50%); left: 50%; top: 50%;}
+                .zoom-base{zoom: var(--zoom);}
+                `;
+            }),			
+        }
+    })
+
+
+    
+    </script>
+
+<script src="./assets/js/auth2.js"></script>
+<script src="./assets/js/main.js"></script>
+
+</body>
+</html>

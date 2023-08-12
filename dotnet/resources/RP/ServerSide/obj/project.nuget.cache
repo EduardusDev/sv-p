@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "7jvLnhPaqIwR8CaQsoPNMPOleHTVQwFGCMpZ6b/7/11BPRsoGMEQvGRjrcOjafxj8wy0/MhYn1u9hS79mlt7QA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kevin\\Desktop\\SV RP\\dotnet\\resources\\RP\\ServerSide\\ServerSide.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kevin\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.16\\microsoft.windowsdesktop.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\kevin\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.16\\microsoft.netcore.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\kevin\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.16\\microsoft.aspnetcore.app.ref.6.0.16.nupkg.sha512"
+  ],
+  "logs": []
+}

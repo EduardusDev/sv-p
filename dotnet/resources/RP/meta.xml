@@ -1,0 +1,5 @@
+<meta>
+    <info name="RP" description="Test Server RP" />
+
+    <script src="ServerSide\bin\x64\Debug\net6.0\ServerSide.dll" />
+</meta>
